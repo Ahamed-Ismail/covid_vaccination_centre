@@ -13,7 +13,7 @@ function Userhomepage() {
 
   useEffect(() => {
     const fetchHospital = async () => {
-      const res = await axios.get("http://localhost:8000/db/gethospital");
+      const res = await axios.get("http://3.83.2.214:8000/db/gethospital");
       const d = res.data;
       setHospitaldetails(d.datarow);
     };
@@ -22,7 +22,7 @@ function Userhomepage() {
   
   useEffect(() => {
     const fetchIsvac = async () => {
-      const res = await axios.get(`http://localhost:8000/db/vaccinated/${aadhar}`);
+      const res = await axios.get(`http://3.83.2.214:8000/db/vaccinated/${aadhar}`);
       const d = res.data;
       if (d.res === 'ok') {
         setIsvaccinated(d.data.vaccinated);
@@ -40,7 +40,7 @@ function Userhomepage() {
   
   const bookappointment = async(index) => {
     try {
-      const res = await axios.get(`http://localhost:8000/db/vaccinated/${aadhar}`);
+      const res = await axios.get(`http://3.83.2.214:8000/db/vaccinated/${aadhar}`);
       const d = res.data;
 
       const appointed = d.data.isappointed;
@@ -53,7 +53,7 @@ function Userhomepage() {
       const data = hospitalDetails[index];
       const username = data.username;
 
-      const res1 = await axios.post("http://localhost:8000/db/bookappointment", { aadhar, username });
+      const res1 = await axios.post("http://3.83.2.214:8000/db/bookappointment", { aadhar, username });
       const d1 = res1.data;
       if (d1.res == "ok") {
         toast.success(d1.msg);

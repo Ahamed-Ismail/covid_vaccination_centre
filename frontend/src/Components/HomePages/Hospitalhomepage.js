@@ -14,7 +14,7 @@ function Hospitalhomepage() {
   useEffect(() => {
     const fetchAppointment = async () => {
       console.log(username);
-      const res = await axios.post("http://localhost:8000/db/getappointment", {username});
+      const res = await axios.post("http://3.83.2.214:8000/db/getappointment", {username});
       const d = res.data;
       setAppointmentDetails(d.datarow);
       console.log(d.datarow)
@@ -25,7 +25,7 @@ function Hospitalhomepage() {
   useEffect(() => {
     const fetchvaccount = async () => {
       console.log(username);
-      const res = await axios.post("http://localhost:8000/db/getvaccinecount", {username});
+      const res = await axios.post("http://3.83.2.214:8000/db/getvaccinecount", {username});
       const d = res.data;
       setvaccineCount(d.data[0].vaccineCount);
     };
@@ -37,7 +37,7 @@ function Hospitalhomepage() {
     const uname = row.username;
     const aadhar = row.aadhar;
 
-    const res = await axios.post("http://localhost:8000/db/confirmvaccine", { uname, aadhar });
+    const res = await axios.post("http://3.83.2.214:8000/db/confirmvaccine", { uname, aadhar });
     const d = res.data;
     if (d.res === "ok") {
       toast.success(d.msg);
@@ -52,7 +52,7 @@ function Hospitalhomepage() {
     const uname = row.username;
     const aadhar = row.aadhar;
 
-    const res = await axios.post("http://localhost:8000/db/deletevaccine", { uname, aadhar });
+    const res = await axios.post("http://3.83.2.214:8000/db/deletevaccine", { uname, aadhar });
     const d = res.data;
     if (d.res === "ok") {
       toast.success(d.msg);
@@ -64,7 +64,7 @@ function Hospitalhomepage() {
 
   const updatecount = async () => {
     console.log(vaccineCount);
-    const res = await axios.post("http://localhost:8000/db/updatecount", { username, vaccineCount });
+    const res = await axios.post("http://3.83.2.214:8000/db/updatecount", { username, vaccineCount });
     const d = res.data;
     console.log(d);
     if (d.res === "ok") {

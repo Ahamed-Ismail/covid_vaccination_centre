@@ -13,7 +13,7 @@ function Hospitallogin() {
   const handleHospitallogin = async (e) => {
     e.preventDefault();
     const result = await axios.post(
-      "http://localhost:8000/auth/hospitallogin",
+      "http://3.83.2.214:8000/auth/hospitallogin",
       { username, password }
     );
     const data = result.data;

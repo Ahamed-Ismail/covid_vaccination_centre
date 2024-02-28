@@ -14,7 +14,7 @@ function Adminlogin() {
   
   const handleAdminlogin = async (e) => {
     e.preventDefault();
-    const result = await axios.post("http://localhost:8000/auth/adminlogin", { username, password });
+    const result = await axios.post("http://3.83.2.214:8000/auth/adminlogin", { username, password });
     const data = result.data;
     if (data.res === "ok") {
       console.log('OK');

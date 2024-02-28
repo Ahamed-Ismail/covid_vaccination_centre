@@ -20,7 +20,7 @@ function Signup() {
     e.preventDefault();
     try {
       console.log(typeof dob, dob);
-      const result = await axios.post("http://localhost:8000/auth/signup", {
+      const result = await axios.post("http://3.83.2.214:8000/auth/signup", {
         aadhar,
         name,
         password,

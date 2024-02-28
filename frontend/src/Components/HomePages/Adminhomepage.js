@@ -20,7 +20,7 @@ function Adminhomepage() {
 
   useEffect(() => {
     const fetchHospital = async () => {
-      const res = await axios.get("http://localhost:8000/db/gethospital");
+      const res = await axios.get("http://3.83.2.214:8000/db/gethospital");
       const d = res.data;
       setHospitaldetails(d.datarow);
     };
@@ -33,11 +33,11 @@ function Adminhomepage() {
       console.log(index);
       const uname = hospitalDetails[index].username;
       console.log(uname);
-      const del = await axios.delete(`http://localhost:8000/db/deletehospital/${uname}`);
+      const del = await axios.delete(`http://3.83.2.214:8000/db/deletehospital/${uname}`);
       const r = del.data;
       if (r.res === "ok") {
         toast.success(r.msg);
-        const res = await axios.get("http://localhost:8000/db/gethospital");
+        const res = await axios.get("http://3.83.2.214:8000/db/gethospital");
         const d = res.data;
         setHospitaldetails(d.datarow);
         navigate('/adminhomepage');
@@ -50,11 +50,11 @@ function Adminhomepage() {
 
   const addhospital = async () => {
     try {
-      const add = await axios.post("http://localhost:8000/db/addhospital", { username, password, xcord, ycord, address, district, state });
+      const add = await axios.post("http://3.83.2.214:8000/db/addhospital", { username, password, xcord, ycord, address, district, state });
       const r = add.data;
       if (r.res === 'ok') {
         toast.success(r.msg);
-        const res = await axios.get("http://localhost:8000/db/gethospital");
+        const res = await axios.get("http://3.83.2.214:8000/db/gethospital");
         const d = res.data;
         setHospitaldetails(d.datarow);
       }

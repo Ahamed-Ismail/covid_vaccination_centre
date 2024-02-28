@@ -12,7 +12,7 @@ function Userlogin() {
 
   const handleUserLogin = async (e) => {
     e.preventDefault();
-    const result = await axios.post("http://localhost:8000/auth/userlogin", { aadhar, password });
+    const result = await axios.post("http://3.83.2.214:8000/auth/userlogin", { aadhar, password });
     const data = result.data;
     if (data.res === "ok") {
       toast.success(data.msg);
