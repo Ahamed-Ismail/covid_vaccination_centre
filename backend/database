@@ -1,0 +1,41 @@
+mysql> describe hospital;
++--------------+---------------+------+-----+---------+-------+
+| Field        | Type          | Null | Key | Default | Extra |
++--------------+---------------+------+-----+---------+-------+
+| username     | varchar(30)   | NO   | PRI | NULL    |       |
+| password     | varchar(200)  | YES  |     | NULL    |       |
+| xcord        | decimal(14,6) | YES  |     | NULL    |       |
+| ycord        | decimal(14,6) | YES  |     | NULL    |       |
+| address      | varchar(200)  | YES  |     | NULL    |       |
+| district     | varchar(50)   | YES  |     | NULL    |       |
+| state        | varchar(50)   | YES  |     | NULL    |       |
+| vaccineCount | int           | YES  |     | NULL    |       |
++--------------+---------------+------+-----+---------+-------+
+
+
+mysql> describe user;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| aadhar      | varchar(12)  | NO   | PRI | NULL    |       |
+| name        | varchar(30)  | YES  |     | NULL    |       |
+| password    | varchar(120) | YES  |     | NULL    |       |
+| phoneno     | int          | YES  |     | NULL    |       |
+| bloodGroup  | varchar(4)   | YES  |     | NULL    |       |
+| DOB         | char(10)     | YES  |     | NULL    |       |
+| email       | varchar(75)  | YES  |     | NULL    |       |
+| gender      | varchar(6)   | YES  |     | NULL    |       |
+| vaccinated  | char(1)      | YES  |     | NULL    |       |
+| isappointed | char(1)      | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+
+mysql> describe appointment;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| username | varchar(30) | YES  |     | NULL    |       |
+| aadhar   | varchar(12) | YES  |     | NULL    |       |
+| name     | varchar(30) | YES  |     | NULL    |       |
+| gender   | varchar(6)  | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
